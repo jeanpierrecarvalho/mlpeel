@@ -1,7 +1,7 @@
 {
   "name": "mlpeel",
   "version": "1.0.0",
-  "description": "Zero-dependency neural network model viewer for ONNX, Safetensors, and GGUF",
+  "description": "Minimal-dependency neural network model viewer for ONNX, Safetensors, and GGUF",
   "type": "module",
   "license": "MIT",
   "author": "Jean-Pierre Carvalho (https://github.com/jeanpierrecarvalho)",

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>mlpeel — zero-dependency neural network model viewer</title>
+  <title>mlpeel — minimal-dependency neural network model viewer</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
@@ -147,7 +147,7 @@
   <div class="container">
     <div class="hero">
       <h1><span>ml</span>peel</h1>
-      <p>Zero-dependency neural network model viewer for ONNX, Safetensors, and GGUF</p>
+      <p>Minimal-dependency neural network model viewer for ONNX, Safetensors, and GGUF</p>
       <div class="command" onclick="navigator.clipboard.writeText('npx mlpeel model.onnx')">
         <span><span class="prompt">$</span> npx mlpeel model.onnx</span>
         <span class="copy">copy</span>
@@ -156,8 +156,8 @@
 
     <div class="features">
       <div class="feature">
-        <h3>Zero Dependencies</h3>
-        <p>Only Node.js 22+ built-ins. No npm install needed with npx.</p>
+        <h3>Minimal Dependencies</h3>
+        <p>Core viewer uses only Node.js 22+ built-ins. Inference requires onnxruntime-node.</p>
       </div>
       <div class="feature">
         <h3>Interactive Graph</h3>

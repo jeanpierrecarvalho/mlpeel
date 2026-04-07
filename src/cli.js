@@ -17,7 +17,7 @@ const PARSERS = {
 
 function printHelp() {
   console.log(`
-  mlpeel — zero-dependency neural network model viewer
+  mlpeel — minimal-dependency neural network model viewer
 
   Usage:
     mlpeel <model-file> [options]

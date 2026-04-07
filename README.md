@@ -1,6 +1,6 @@
 # mlpeel
 
-Zero-dependency neural network model viewer. Open any supported model file and instantly visualize its architecture as an interactive graph.
+Minimal-dependency neural network model viewer. Open any supported model file and instantly visualize its architecture as an interactive graph.
 
 ```
 npx mlpeel model.onnx
@@ -8,7 +8,7 @@ npx mlpeel model.onnx
 
 ## Features
 
-- **Zero dependencies** — only Node.js 22+ built-ins
+- **Minimal dependencies** — core viewer uses only Node.js 22+ built-ins; inference requires `onnxruntime-node`
 - **Interactive graph** — pan, zoom, click nodes to inspect shapes, types, and parameters
 - **Three formats** — ONNX, Safetensors, GGUF
 - **Auto-detection** — format recognized from extension or magic bytes
@@ -63,7 +63,7 @@ mlpeel <model-file> [options]
 ## How It Works
 
 1. Reads the model file and auto-detects the format
-2. Parses the binary structure using a custom zero-dependency parser
+2. Parses the binary structure using a custom built-in parser
 3. Builds a graph representation of the model architecture
 4. Starts a local HTTP server and opens the viewer in your browser
 5. The viewer renders the graph as interactive SVG with pan/zoom
@@ -84,7 +84,7 @@ Binary format parser that reads the GGUF v2/v3 header, metadata key-value pairs,
 
 | Tool | Deps | Formats | Graph | CLI |
 |------|------|---------|-------|-----|
-| **mlpeel** | 0 | 3 | Yes | Yes |
+| **mlpeel** | 1 optional | 3 | Yes | Yes |
 | Netron | Electron | 60+ | Yes | No |
 | onnx-tool | pip | 1 | Partial | Yes |
 
