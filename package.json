@@ -1,0 +1,39 @@
+{
+  "name": "mlpeel",
+  "version": "1.0.0",
+  "description": "Zero-dependency neural network model viewer for ONNX, Safetensors, and GGUF",
+  "type": "module",
+  "license": "MIT",
+  "author": "Jean-Pierre Carvalho (https://github.com/jeanpierrecarvalho)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeanpierrecarvalho/mlpeel"
+  },
+  "homepage": "https://jeanpierrecarvalho.github.io/mlpeel",
+  "keywords": [
+    "neural-network",
+    "model-viewer",
+    "onnx",
+    "safetensors",
+    "gguf",
+    "machine-learning",
+    "deep-learning",
+    "visualizer"
+  ],
+  "bin": {
+    "mlpeel": "src/cli.js"
+  },
+  "files": [
+    "src/"
+  ],
+  "scripts": {
+    "start": "node src/cli.js",
+    "test": "node --test src/tests/*.test.js"
+  },
+  "optionalDependencies": {
+    "onnxruntime-node": "^1.24.3"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}

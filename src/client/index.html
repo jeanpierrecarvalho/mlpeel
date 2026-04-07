@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mlpeel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header id="toolbar">
+    <span class="logo">mlpeel</span>
+    <span id="filename" class="filename"></span>
+    <span id="stats" class="stats"></span>
+    <button id="toggle-io" class="toolbar-btn" title="I/O Format & Inference">I/O</button>
+  </header>
+  <main>
+    <div id="canvas-container">
+      <svg id="graph" xmlns="http://www.w3.org/2000/svg"></svg>
+    </div>
+    <aside id="sidebar" class="hidden">
+      <div id="sidebar-handle"></div>
+      <button id="close-sidebar">&times;</button>
+      <div id="node-details"></div>
+    </aside>
+    <aside id="io-panel" class="hidden">
+      <div id="io-handle"></div>
+      <button id="close-io">&times;</button>
+      <h3 class="panel-title">Input Format</h3>
+      <div id="io-inputs"></div>
+      <h3 class="panel-title">Output Format</h3>
+      <div id="io-outputs"></div>
+      <div id="infer-section" class="hidden">
+        <h3 class="panel-title">Run Inference</h3>
+        <p class="hint">Paste JSON matching the input format above</p>
+        <textarea id="infer-input" spellcheck="false" placeholder='{ "input_name": { "data": [...], "shape": [1, 3], "type": "float32" } }'></textarea>
+        <button id="infer-btn">Run</button>
+        <div id="infer-status"></div>
+        <h3 class="panel-title result-title hidden">Result</h3>
+        <pre id="infer-output"></pre>
+      </div>
+    </aside>
+  </main>
+  <script type="module" src="viewer.js"></script>
+</body>
+</html>
