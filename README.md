@@ -6,6 +6,8 @@ Minimal-dependency neural network model viewer. Open any supported model file an
 npx mlpeel model.onnx
 ```
 
+![mlpeel viewer](docs/preview.png)
+
 ## Features
 
 - **Minimal dependencies** — core viewer uses only Node.js 22+ built-ins; inference requires `onnxruntime-node`

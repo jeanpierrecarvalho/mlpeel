@@ -359,25 +359,7 @@ function setupIOPanel() {
   if (modelData.canInfer) {
     document.getElementById('infer-section').classList.remove('hidden');
 
-    // pre-fill input template
-    const template = {};
-    for (const n of inputNodes) {
-      const p = n.params?.[0] || {};
-      const shape = p.shape || [];
-      const dtype = (p.dtype || 'FLOAT').toLowerCase();
-      const type = dtype.includes('float') ? 'float32'
-        : dtype.includes('int64') ? 'int64'
-        : dtype.includes('int') ? 'int32'
-        : dtype.includes('double') ? 'float64'
-        : 'float32';
-      const size = shape.reduce((a, b) => (typeof b === 'number' ? a * b : a), 1);
-      template[n.name] = {
-        data: Array(Math.min(size, 20)).fill(0),
-        shape: shape.map(d => typeof d === 'number' ? d : 1),
-        type,
-      };
-    }
-    document.getElementById('infer-input').value = JSON.stringify(template, null, 2);
+    document.getElementById('infer-input').value = '';
 
     // run button
     document.getElementById('infer-btn').addEventListener('click', async () => {
