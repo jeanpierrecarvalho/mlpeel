@@ -23,16 +23,25 @@ export async function detect(filePath) {
     return { format: 'gguf', buffer };
   }
 
+  if (ext === '.tflite') {
+    return { format: 'tflite', buffer };
+  }
+
   if (ext === '.onnx') {
     return { format: 'onnx', buffer };
   }
 
   // fallback: check magic bytes
-  const head = buffer.subarray(0, 4);
+  const head = buffer.subarray(0, 8);
 
   if (head[0] === SIGNATURES.gguf[0] && head[1] === SIGNATURES.gguf[1] &&
       head[2] === SIGNATURES.gguf[2] && head[3] === SIGNATURES.gguf[3]) {
     return { format: 'gguf', buffer };
+  }
+
+  // TFLite: file identifier "TFL3" at bytes 4-7
+  if (head[4] === 0x54 && head[5] === 0x46 && head[6] === 0x4C && head[7] === 0x33) {
+    return { format: 'tflite', buffer };
   }
 
   // ONNX protobuf starts with field 1 (ir_version) varint

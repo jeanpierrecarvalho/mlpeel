@@ -12,7 +12,7 @@ npx mlpeel model.onnx
 
 - **Minimal dependencies** — core viewer uses only Node.js 22+ built-ins; inference requires `onnxruntime-node`
 - **Interactive graph** — pan, zoom, click nodes to inspect shapes, types, and parameters
-- **Three formats** — ONNX, Safetensors, GGUF
+- **Four formats** — ONNX, Safetensors, GGUF, TFLite
 - **Auto-detection** — format recognized from extension or magic bytes
 - **JSON mode** — dump model structure as JSON for scripting
 
@@ -23,6 +23,7 @@ npx mlpeel model.onnx
 | ONNX | `.onnx` | Universal interchange format |
 | Safetensors | `.safetensors` | HuggingFace model weights |
 | GGUF | `.gguf` | llama.cpp / local LLM inference |
+| TFLite | `.tflite` | TensorFlow Lite / mobile / edge |
 
 ## Install
 
@@ -82,11 +83,15 @@ Reads the JSON header to extract tensor names, shapes, and dtypes. Groups tensor
 
 Binary format parser that reads the GGUF v2/v3 header, metadata key-value pairs, and tensor descriptors including quantization types.
 
+### TFLite
+
+FlatBuffers decoder that reads the TFLite schema — operator codes, subgraphs, tensors, and operators — to reconstruct the inference graph.
+
 ## Comparison
 
 | Tool | Deps | Formats | Graph | CLI |
 |------|------|---------|-------|-----|
-| **mlpeel** | 1 optional | 3 | Yes | Yes |
+| **mlpeel** | 1 optional | 4 | Yes | Yes |
 | Netron | Electron | 60+ | Yes | No |
 | onnx-tool | pip | 1 | Partial | Yes |
 

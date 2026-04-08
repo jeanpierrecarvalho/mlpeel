@@ -7,12 +7,14 @@ import { detect } from './parsers/detect.js';
 import { parse as parseOnnx } from './parsers/onnx.js';
 import { parse as parseSafetensors } from './parsers/safetensors.js';
 import { parse as parseGguf } from './parsers/gguf.js';
+import { parse as parseTflite } from './parsers/tflite.js';
 import { startServer } from './server.js';
 
 const PARSERS = {
   onnx: parseOnnx,
   safetensors: parseSafetensors,
   gguf: parseGguf,
+  tflite: parseTflite,
 };
 
 function printHelp() {
@@ -34,6 +36,7 @@ function printHelp() {
     .onnx            ONNX models
     .safetensors     Safetensors (HuggingFace)
     .gguf            GGUF (llama.cpp)
+    .tflite          TensorFlow Lite
 `);
 }
 

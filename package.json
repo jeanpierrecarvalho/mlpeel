@@ -1,7 +1,7 @@
 {
   "name": "mlpeel",
   "version": "1.0.0",
-  "description": "Minimal-dependency neural network model viewer for ONNX, Safetensors, and GGUF",
+  "description": "Minimal-dependency neural network model viewer for ONNX, Safetensors, GGUF, and TFLite",
   "type": "module",
   "license": "MIT",
   "author": "Jean-Pierre Carvalho (https://github.com/jeanpierrecarvalho)",
@@ -16,6 +16,8 @@
     "onnx",
     "safetensors",
     "gguf",
+    "tflite",
+    "tensorflow-lite",
     "machine-learning",
     "deep-learning",
     "visualizer"
